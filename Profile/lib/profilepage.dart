@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profileui/profile.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -12,7 +13,8 @@ class ProfilePage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: ((context) => Profile()))),
         ),
       ),
       body: Stack(
@@ -42,7 +44,8 @@ class ProfilePage extends StatelessWidget {
                             Icons.mail,
                             color: Colors.black,
                           ),
-                          hintText: "abc@gmail.com"),
+                          enabled: false,
+                          hintText: "abc@caothang.edu.vn"),
                     ),
                     TextField(
                       decoration: InputDecoration(
@@ -73,13 +76,6 @@ class ProfilePage extends StatelessWidget {
                 ),
               )
             ],
-          ),
-          CustomPaint(
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-            ),
-            painter: HeaderCurvedContainer(),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,36 +117,13 @@ class ProfilePage extends StatelessWidget {
                   Icons.edit,
                   color: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => Profile()))),
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Text("Element 1"),
-              Text("Element 2"),
-              Text("Element 3"),
-            ],
           ),
         ],
       ),
     );
   }
-}
-
-class HeaderCurvedContainer extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()..color = Color.fromARGB(255, 221, 188, 248);
-    Path path = Path()
-      ..relativeLineTo(0, 150)
-      ..quadraticBezierTo(size.width / 2, 225, size.width, 150)
-      ..relativeLineTo(0, -150)
-      ..close();
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
