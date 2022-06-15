@@ -4,6 +4,10 @@ import 'package:demo/thongbao.dart';
 import 'package:demo/profile.dart';
 
 class Resetpassword extends StatefulWidget {
+  @override
+  State<Resetpassword> createState() => _resetpassword();
+}
+class _resetpassword extends State<Resetpassword> {
   bool hidePassWord=true;
   @override
   Widget build(BuildContext context) {
@@ -57,9 +61,9 @@ class Resetpassword extends StatefulWidget {
                     hintText: "Mật khẩu cũ",
                     suffixIcon:InkWell(
                       onTap:() {
-                        setState(){
-                          hidePassWord=!hidePassWord;
-                        }
+                        setState(() {
+                       hidePassWord=!hidePassWord;
+                        });
                         },
                       child: Icon(Icons.visibility_off),
     ),
@@ -157,6 +161,5 @@ class Resetpassword extends StatefulWidget {
     ),
     );
   }
-
 }
 
