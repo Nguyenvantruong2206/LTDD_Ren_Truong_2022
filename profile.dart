@@ -74,9 +74,7 @@ class Profile extends StatelessWidget {
                             border: InputBorder.none,
                             enabled: false,
                             hintText: "01/11/2001"),
-                      ),
-                      Padding(
-                          padding: EdgeInsets.all(10),
+                      ),Container(
                           child: FlatButton(
                             child: Row(
                               children: [
@@ -92,8 +90,8 @@ class Profile extends StatelessWidget {
                             color: Colors.white,
                             textColor: Colors.black,
                           )),
-                      Padding(
-                          padding: EdgeInsets.all(10),
+
+                      Container(
                           child: FlatButton(
                             child: Row(
                               children: [
@@ -118,16 +116,12 @@ class Profile extends StatelessWidget {
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.blue,
             borderRadius: BorderRadius.only(
 
             ),
             boxShadow: [
-              BoxShadow(
-                offset: Offset(0, -15),
-                blurRadius: 20,
-                color: Colors.blue,
-              )
+
             ]),
         child: SafeArea(
             child: Row(
