@@ -8,13 +8,15 @@ class Resetpassword extends StatefulWidget {
   State<Resetpassword> createState() => _resetpassword();
 }
 class _resetpassword extends State<Resetpassword> {
-  bool hidePassWord=true;
+  bool hidePassWord1=true;
+  bool hidePassWord2=true;
+  bool hidePassWord3=true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color.fromARGB(255, 212, 184, 240),
+        backgroundColor: Colors.blue,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -46,7 +48,7 @@ class _resetpassword extends State<Resetpassword> {
               child:Padding(padding: EdgeInsets.all(10),
                 child: TextField(
                   textInputAction: TextInputAction.done,
-                  obscureText: hidePassWord,
+                  obscureText: hidePassWord1,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0),
@@ -62,10 +64,10 @@ class _resetpassword extends State<Resetpassword> {
                     suffixIcon:InkWell(
                       onTap:() {
                         setState(() {
-                       hidePassWord=!hidePassWord;
+                       hidePassWord1=!hidePassWord1;
                         });
                         },
-                      child: Icon(Icons.visibility_off),
+                      child: Icon(hidePassWord1?Icons.visibility_off:Icons.visibility),
     ),
                     prefixIcon: Padding(
                       padding:  EdgeInsets.all(10),
@@ -81,7 +83,7 @@ class _resetpassword extends State<Resetpassword> {
               child:Padding(padding: EdgeInsets.all(10),
                 child: TextFormField(
                   textInputAction: TextInputAction.done,
-                  obscureText: true,
+                  obscureText: hidePassWord2,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -94,6 +96,14 @@ class _resetpassword extends State<Resetpassword> {
                       ),
                     ),
                     hintText: "Mật khẩu mới",
+                    suffixIcon:InkWell(
+                      onTap:() {
+                        setState(() {
+                          hidePassWord2=!hidePassWord2;
+                        });
+                      },
+                      child: Icon(hidePassWord2?Icons.visibility_off:Icons.visibility),
+                    ),
                     prefixIcon: Padding(
                       padding:  EdgeInsets.all(10),
                       child: Icon(Icons.lock,color: Colors.blue,),
@@ -111,7 +121,7 @@ class _resetpassword extends State<Resetpassword> {
                   Padding(padding: EdgeInsets.all(10),
                     child: TextField(
                       textInputAction: TextInputAction.done,
-                      obscureText: true,
+                      obscureText: hidePassWord3,
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
@@ -124,6 +134,14 @@ class _resetpassword extends State<Resetpassword> {
                           ),
                         ),
                         hintText: "Xác nhập mật khẩu",
+                        suffixIcon:InkWell(
+                          onTap:() {
+                            setState(() {
+                              hidePassWord3=!hidePassWord3;
+                            });
+                          },
+                          child: Icon(hidePassWord3?Icons.visibility_off:Icons.visibility),
+                        ),
                         prefixIcon: Padding(
                           padding:  EdgeInsets.all(15),
                           child: Icon(Icons.lock,color: Colors.blue,),
@@ -141,11 +159,14 @@ class _resetpassword extends State<Resetpassword> {
             height: 55,
             width: 200,
             child: RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
               onPressed: () {},
               color: Colors.blue,
               child: Center(
                 child: Text(
-                  "Xác nhận thay đổi",
+                  "Thay đổi",
                   style: TextStyle(
                     fontSize: 23,
                     color: Colors.white,
