@@ -86,6 +86,7 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.person,
                             size: 20,
+                            color: Colors.blue,
                           ),
                           SizedBox(
                             width: 20,
@@ -121,6 +122,7 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.date_range,
                             size: 20,
+                            color: Colors.blue,
                           ),
                           SizedBox(
                             width: 20,
@@ -156,6 +158,7 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.location_pin,
                             size: 20,
+                            color: Colors.blue,
                           ),
                           SizedBox(
                             width: 20,
@@ -191,6 +194,7 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.male,
                             size: 20,
+                            color: Colors.blue,
                           ),
                           SizedBox(
                             width: 20,
@@ -226,6 +230,7 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.phone,
                             size: 20,
+                            color: Colors.blue,
                           ),
                           SizedBox(
                             width: 20,
