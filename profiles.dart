@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/profilespage/profilespage.dart';
 
-import 'package:flutter_application_1/thongbao/thongbao.dart';
-import 'package:flutter_application_1/trangchu/home.dart';
-
-class Profile extends StatelessWidget {
+class profiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 203, 208, 248),
+      backgroundColor: const Color(0xffdee2fe),
       body: SizedBox(
         width: double.infinity,
         child: Column(
