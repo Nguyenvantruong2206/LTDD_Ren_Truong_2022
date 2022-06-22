@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/forgotpassword.dart';
-import 'package:flutter_application_3/home.dart';
-import 'package:flutter_application_3/homepage.dart';
-import 'package:flutter_application_3/signup.dart';
+import 'package:flutter_application_1/forgotpassword.dart';
+import 'package:flutter_application_1/homepage.dart';
+import 'package:flutter_application_1/signup.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -10,6 +9,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  String tkmd = "admin@caothang.edu.vn";
+  String mkmd = "12345678";
+  int dem = 0;
   bool _showpassword = false;
   TextEditingController _user = new TextEditingController();
   TextEditingController _pass = new TextEditingController();
@@ -176,6 +178,7 @@ class _LoginState extends State<Login> {
   }
 
   void onsignclicked() {
+    dem++;
     setState(
       () {
         if (_user.text.length < 5 || !_user.text.contains("@caothang.edu.vn"))
@@ -195,6 +198,20 @@ class _LoginState extends State<Login> {
             context,
             MaterialPageRoute(builder: (context) => homepage()),
           );
+        } else {
+          if (dem >= 5) {
+            showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                      title: Text("Thông báo"),
+                      content: Text('Bạn đã nhập sai quá 5 lần!'),
+                      actions: [
+                        TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text('OK'))
+                      ],
+                    ));
+          }
         }
       },
     );
